@@ -12,3 +12,21 @@ exports.loadLists = () => {
 
     return lists;
 }
+
+exports.saveList = (listID, data) => {
+    let file = dataPath + listID + '.txt';
+    let buffer = JSON.stringify(data);
+
+    fs.open(file, 'w', (err, fd) => {
+        if (err) {
+            throw 'Could not create file. ' + err;
+        }
+
+        fs.write(fd, buffer, 0, buffer.length, (err) => {
+            if (err) throw 'Error writing file: ' + err;
+            fs.close(fd, () => {
+                console.log('File written successfully.');
+            })
+        })
+    })
+}

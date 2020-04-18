@@ -7,7 +7,7 @@ body {
 /* CONTAINER FLEX */
 .main-container {
     max-width: 1440px;
-    margin: 10% auto;
+    margin: 5% auto;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -19,11 +19,144 @@ body {
     justify-content: center;
 }
 
-/* CARDS */
+/* ADD NEW LIST */
+.add-new-list {
+    margin: 5% auto 0 auto;
+    padding: 1%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+.add-new-list:hover {
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.add-new-list form {
+    margin: auto;
+}
+
+.input-list {
+    max-width: 430px;
+    text-align: center;
+    height: 30px;
+    font-size: 2rem;
+    border: none;
+    background: transparent;
+    font-weight: 200;
+}
+
+.input-list:focus {
+    outline: none;
+}
+
+.btn-list {
+    min-height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 2rem;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.btn-list:hover {
+    background-color: #ffc400;
+    color: white;
+}
+
+/* LIST CARD */
 .list {
     margin: 2%;
     min-width: 200px;
-    padding: 10px 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.list:hover {
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.list-title {
+    padding: 15px;
+    border: 1px #ccc;
+    border-style: solid solid none solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.list-body {
+    padding: 10px;
+    border: 1px #ccc;
+    border-style: none solid none solid;
+}
+
+.list-item {
+    padding: 15px 5px 15px 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.item-text {
+    margin: 0;
+}
+
+.add-item {
+    padding: 10px;
+    border: 1px #ccc;
+    border-style: none solid solid solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-item {
+    min-height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 1rem;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.input-item {
+    text-align: center;
+    height: 30px;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    font-weight: 200;
+}
+
+.input-item:focus {
+    outline: none;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+/* COLORS */
+
+.blue {
+    background-color: #D5D6EA;
+}
+
+.cream {
+    background-color: #F6F6EB;
+}
+
+.green {
+    background-color: #D7ECD9;
+}
+
+.red {
+    background-color: #F5D5CB;
+}
+
+.pink {
+    background-color: #F6ECF5;
+}
+
+.purple {
+    background-color: #F3DDF2;
 }

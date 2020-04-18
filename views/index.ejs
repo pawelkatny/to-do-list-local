@@ -10,26 +10,31 @@
     </head>
 
     <body>
-        <div>
+        <div class="add-new-list">
             <form action="/newlist" method="POST">
-                <input type="text" name="title">
-                <button type="submit">Add new list</button>
+                <input class="input-list" type="text" name="title" placeholder="New list name">
+                <button class="btn-list btn-anim" type="submit">+</button>
             </form>
         </div>
         <div class="main-container">
             <% lists.forEach(element => { %>
             <div class="list">
-                <div class="list-title">
-                    <h3><%= element.title %></h3>
+                <div class="list-title <%= element.color %>">
+                    <h4><%= element.title %></h4>
                 </div>
                 <div class="list-body">
                     <% element.items.forEach(item => { %>
-                    <div id=<%= item.id %>><%= item.value %></div>
+                    
+                    <div class="list-item" id=<%= item.id %>>
+                        <input type="checkbox" name="" id="">
+                        <p class="item-text"><%= item.value %></p>
+                    </div>
                     <% }) %>
                 </div>
-                <div>
+                <div class="add-item">
                     <form action="/additem">
-                        <input type="text">
+                        <input class="input-item" type="text" placeholder="Add item">
+                        <button class="btn-item <%= element.color %>" type="submit" name="listID" value=<%= element.ID %>>+</button>
                     </form>
                 </div>
             </div>
