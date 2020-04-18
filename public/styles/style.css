@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* CONTAINER FLEX */
+.main-container {
+    max-width: 1440px;
+    margin: 10% auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+}
+
+/* CARDS */
+.list {
+    margin: 2%;
+    min-width: 200px;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
