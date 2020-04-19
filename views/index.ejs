@@ -12,7 +12,7 @@
     <body>
         <div class="add-new-list">
             <form action="/newlist" method="POST">
-                <input class="input-list" type="text" name="title" placeholder="New list name">
+                <input class="input-list" type="text" name="title" placeholder="New list name" autocomplete="off">
                 <button class="btn-list btn-anim" type="submit">+</button>
             </form>
         </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="list-body">
                     <% element.items.forEach(item => { %>
-                    
+
                     <div class="list-item" id=<%= item.ID %>>
                         <input type="checkbox" name="" id="">
                         <p class="item-text"><%= item.value %></p>
@@ -33,8 +33,9 @@
                 </div>
                 <div class="add-item">
                     <form action="/additem" method="POST">
-                        <input class="input-item" type="text" name="newItem" placeholder="Add item">
-                        <button class="btn-item <%= element.color %>" type="submit" name="listID" value=<%= element.ID %>>+</button>
+                        <input class="input-item" type="text" name="newItem" placeholder="Add item" autocomplete="off">
+                        <button class="btn-item <%= element.color %>" type="submit" name="listID"
+                            value=<%= element.ID %>>+</button>
                     </form>
                 </div>
             </div>
