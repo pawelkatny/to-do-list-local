@@ -52,6 +52,8 @@ app.post('/additem', (req, res) => {
     lists[index].items.push(newItem);
 
     res.redirect('/');
+
+    fileSystem.updateFile(lists[index]);
 })
 
 app.listen(PORT, () => {

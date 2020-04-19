@@ -30,3 +30,14 @@ exports.saveList = (listID, data) => {
         })
     })
 }
+
+exports.updateFile = (list) => {
+    console.log(list)
+    let file = dataPath + list.ID + '.txt';
+    let buffer = JSON.stringify(list);
+
+    fs.writeFile(file, buffer, (err) => {
+        if (err) throw 'Error updating file: ' + err;
+        console.log('File saved successfully.');
+    })
+}
