@@ -18,22 +18,22 @@
         </div>
         <div class="main-container">
             <% lists.forEach(element => { %>
-            <div class="list">
+            <div class="list" id=<%= element.ID %>>
                 <div class="list-title <%= element.color %>">
                     <h4><%= element.title %></h4>
                 </div>
                 <div class="list-body">
                     <% element.items.forEach(item => { %>
                     
-                    <div class="list-item" id=<%= item.id %>>
+                    <div class="list-item" id=<%= item.ID %>>
                         <input type="checkbox" name="" id="">
                         <p class="item-text"><%= item.value %></p>
                     </div>
                     <% }) %>
                 </div>
                 <div class="add-item">
-                    <form action="/additem">
-                        <input class="input-item" type="text" placeholder="Add item">
+                    <form action="/additem" method="POST">
+                        <input class="input-item" type="text" name="newItem" placeholder="Add item">
                         <button class="btn-item <%= element.color %>" type="submit" name="listID" value=<%= element.ID %>>+</button>
                     </form>
                 </div>

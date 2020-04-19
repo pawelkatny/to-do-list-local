@@ -22,7 +22,7 @@ app.post('/newlist', (req, res) => {
         req.body.title = appData.getDate();
     }
 
-    let listID
+    let listID;
     if (!Array.isArray(lists) || !lists.length) {
         listID = 0;
     } else {
@@ -36,6 +36,22 @@ app.post('/newlist', (req, res) => {
     fileSystem.saveList(listID, newList);
 })
 
+app.post('/additem', (req, res) => {
+    console.log(req.body.newItem);
+
+    const index = lists.findIndex(ele => ele.ID === Number(req.body.listID));
+    
+    let itemID;
+    if (!Array.isArray(lists[index].items) || !lists[index].items.length) {
+        itemID = 0;
+    } else {
+        itemID = lists[index].items[lists[index].items.length - 1].ID + 1;
+    }
+    let newItem = appData.newItem(req.body, itemID);
+    lists[index].items.push(newItem);
+
+    res.redirect('/');
+})
 
 app.listen(PORT, () => {
     console.log(`Server started. Listening at port ${PORT}.`);

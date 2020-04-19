@@ -18,3 +18,13 @@ exports.newList = (body, listID) => {
 
     return newList;
 }   
+
+exports.newItem = (body, itemID) => {
+    const newItem = {
+        ID: itemID,
+        value: body.newItem,
+        done: false
+    }
+
+    return newItem;
+}

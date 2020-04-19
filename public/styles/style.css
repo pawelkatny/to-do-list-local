@@ -67,7 +67,8 @@ body {
 /* LIST CARD */
 .list {
     margin: 2%;
-    min-width: 200px;
+    /* min-width: 200px; */
+    max-width: 300px;
     border-radius: 5px;
 }
 
