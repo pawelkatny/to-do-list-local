@@ -22,12 +22,12 @@ app.post('/newlist', (req, res) => {
         req.body.title = appData.getDate();
     }
 
-    let listID;
-    if (!Array.isArray(lists) || !lists.length) {
-        listID = 0;
-    } else {
-        listID = lists[lists.length - 1].ID + 1;
-    }
+    let listID = appData.getID(lists);
+    // if (!Array.isArray(lists) || !lists.length) {
+    //     listID = 0;
+    // } else {
+    //     listID = lists[lists.length - 1].ID + 1;
+    // }
 
     let newList = appData.newList(req.body, listID)
     lists.push(newList);
@@ -41,12 +41,12 @@ app.post('/additem', (req, res) => {
 
     const index = lists.findIndex(ele => ele.ID === Number(req.body.listID));
     
-    let itemID;
-    if (!Array.isArray(lists[index].items) || !lists[index].items.length) {
-        itemID = 0;
-    } else {
-        itemID = lists[index].items[lists[index].items.length - 1].ID + 1;
-    }
+    let itemID = appData.getID(lists[index].items);
+    // if (!Array.isArray(lists[index].items) || !lists[index].items.length) {
+    //     itemID = 0;
+    // } else {
+    //     itemID = lists[index].items[lists[index].items.length - 1].ID + 1;
+    // }
     
     let newItem = appData.newItem(req.body, itemID);
     lists[index].items.push(newItem);

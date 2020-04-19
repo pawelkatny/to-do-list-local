@@ -28,3 +28,14 @@ exports.newItem = (body, itemID) => {
 
     return newItem;
 }
+
+exports.getID = (array) => {
+    let ID;
+    if (!Array.isArray(array) || !array.length) {
+        ID = 0;
+    } else {
+        ID = array[array.length - 1].ID + 1;
+    }
+
+    return ID;
+}

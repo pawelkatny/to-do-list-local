@@ -32,7 +32,6 @@ exports.saveList = (listID, data) => {
 }
 
 exports.updateFile = (list) => {
-    console.log(list)
     let file = dataPath + list.ID + '.txt';
     let buffer = JSON.stringify(list);
 

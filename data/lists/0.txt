@@ -1,1 +1,1 @@
-{"ID":0,"title":"New list #1","items":[{"ID":0,"value":"asd","done":false},{"ID":1,"value":"asd","done":false}],"color":"green"}
+{"ID":0,"title":"New list #1","items":[{"ID":0,"value":"asd","done":false},{"ID":1,"value":"asd","done":false},{"ID":2,"value":"asd","done":false},{"ID":0,"value":"new item","done":false},{"ID":0,"value":"pranie","done":false},{"ID":0,"value":"dfgdf","done":false},{"ID":1,"value":"asd","done":false}],"color":"green"}
