@@ -47,6 +47,7 @@ app.post('/additem', (req, res) => {
     } else {
         itemID = lists[index].items[lists[index].items.length - 1].ID + 1;
     }
+    
     let newItem = appData.newItem(req.body, itemID);
     lists[index].items.push(newItem);
 

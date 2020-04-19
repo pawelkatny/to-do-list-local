@@ -13,7 +13,7 @@ exports.newList = (body, listID) => {
         ID: listID,
         title: body.title,
         items: [], 
-        color: colors[Math.floor(Math.random() * 6)]
+        color: colors[Math.floor(Math.random() * colors.length)]
     }
 
     return newList;
