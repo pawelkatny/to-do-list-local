@@ -40,3 +40,12 @@ exports.updateFile = (list) => {
         console.log('File saved successfully.');
     })
 }
+
+exports.deleteList = (listID) => {
+    let file = dataPath + listID + '.txt';
+
+    fs.unlink(file, (err) => {
+        if (err) throw err;
+        console.log('File was deleted.');
+    })
+}

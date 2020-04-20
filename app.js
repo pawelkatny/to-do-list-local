@@ -31,17 +31,14 @@ app.post('/newlist', (req, res) => {
 })
 
 app.post('/additem', (req, res) => {
-    console.log(req.body.newItem);
-
     const index = lists.findIndex(ele => ele.ID === Number(req.body.listID));
     
     let itemID = appData.getID(lists[index].items);
     let newItem = appData.newItem(req.body, itemID);
     lists[index].items.push(newItem);
 
-    res.redirect('/');
-
     fileSystem.updateFile(lists[index]);
+    res.redirect('/');
 })
 
 app.post('/deletelist', (req, res) => {
@@ -49,7 +46,7 @@ app.post('/deletelist', (req, res) => {
     let index = appData.findID(lists, listID);
     
     lists.splice(index, 1); 
-    
+    fileSystem.deleteList(listID);
     res.send({redirect_path: '/'});
 })
 
