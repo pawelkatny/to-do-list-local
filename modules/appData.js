@@ -39,3 +39,9 @@ exports.getID = (array) => {
 
     return ID;
 }
+
+exports.findID = (array, listID) => {
+    const listIndex = array.findIndex(ele => ele.ID === Number(listID));
+ 
+    return listIndex;
+}

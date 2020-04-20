@@ -21,10 +21,12 @@
             <div class="list" id=<%= element.ID %>>
                 <div class="list-title <%= element.color %>">
                     <h4><%= element.title %></h4>
+                    <div class="btn-delete">
+                        <i class="fas fa-trash"></i>
+                    </div>
                 </div>
                 <div class="list-body">
                     <% element.items.forEach(item => { %>
-
                     <div class="list-item" id=<%= item.ID %>>
                         <input type="checkbox" name="" id="">
                         <p class="item-text"><%= item.value %></p>
@@ -41,6 +43,10 @@
             </div>
             <% }) %>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="https://kit.fontawesome.com/4ff1c0f09b.js" crossorigin="anonymous"></script>
     </body>
 
     <footer></footer>

@@ -4,6 +4,14 @@ body {
     font-family: 'Fira Sans', sans-serif;
 }
 
+/* HEADERS */
+h4 {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+
 /* CONTAINER FLEX */
 .main-container {
     max-width: 1440px;
@@ -84,6 +92,12 @@ body {
     border-top-right-radius: 5px;
 }
 
+.btn-delete {
+    position: relative;
+    right: 0;
+    display: inline-block;
+}
+
 .list-body {
     padding: 10px;
     border: 1px #ccc;
@@ -139,10 +153,6 @@ body {
     outline: none;
 }
 
-h4 {
-    padding: 0;
-    margin: 0;
-}
 
 /* COLORS */
 
