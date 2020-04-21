@@ -26,8 +26,8 @@ app.post('/newlist', (req, res) => {
     let newList = appData.newList(req.body, listID)
     lists.push(newList);
 
-    res.redirect('/');
     fileSystem.saveList(listID, newList);
+    res.redirect('/');
 })
 
 app.post('/additem', (req, res) => {
