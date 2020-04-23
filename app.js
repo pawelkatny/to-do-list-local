@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/newlist', (req, res) => {
+    console.log(req.body);
     if (req.body.title === '') {
         req.body.title = appData.getDate();
     }
@@ -27,7 +28,7 @@ app.post('/newlist', (req, res) => {
     lists.push(newList);
 
     fileSystem.saveList(listID, newList);
-    res.redirect('/');
+    res.status(200).json(newList);
 })
 
 app.post('/additem', (req, res) => {
@@ -41,13 +42,21 @@ app.post('/additem', (req, res) => {
     res.redirect('/');
 })
 
-app.post('/deletelist', (req, res) => {
+app.delete('/delete', (req, res) => {
     let listID = req.body.listID;
     let index = appData.findID(lists, listID);
     
     lists.splice(index, 1); 
     fileSystem.deleteList(listID);
-    res.send({redirect_path: '/'});
+    res.status(200).end();
+})
+
+app.put('/update', (req, res) => {
+    console.log(req.body.title)
+    const index = lists.findIndex(ele => ele.ID ===Number(req.body.ID))
+
+    lists[index].title = req.body.title;
+    res.status(200).end();
 })
 
 app.listen(PORT, () => {

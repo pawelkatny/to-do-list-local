@@ -8,7 +8,6 @@ body {
 h4 {
     padding: 0;
     margin: 0;
-    display: inline-block;
 }
 
 
@@ -44,7 +43,7 @@ h4 {
     margin: auto;
 }
 
-.input-list {
+.input-new-list {
     max-width: 430px;
     text-align: center;
     height: 30px;
@@ -54,11 +53,11 @@ h4 {
     font-weight: 200;
 }
 
-.input-list:focus {
+.input-new-list:focus {
     outline: none;
 }
 
-.btn-list {
+.btn-new-list {
     min-height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -67,7 +66,7 @@ h4 {
     cursor: pointer;
 }
 
-.btn-list:hover {
+.btn-new-list:hover {
     background-color: #ffc400;
     color: white;
 }
@@ -93,6 +92,30 @@ h4 {
     border-top-right-radius: 5px;
     display: flex;
     justify-content: space-between;
+}
+
+
+.title {
+    word-wrap: break-word;
+    max-width: 200px;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+.input-title {
+    max-width: 200px;
+    font-size: 1rem;
+    font-family: 'Fira Sans', sans-serif;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    padding: 0;
+    display: inline-block;
+}
+
+.input-title:focus {
+    outline: none;
 }
 
 .btn-delete {
