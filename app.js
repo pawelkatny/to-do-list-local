@@ -56,6 +56,7 @@ app.put('/update', (req, res) => {
     const index = lists.findIndex(ele => ele.ID ===Number(req.body.ID))
 
     lists[index].title = req.body.title;
+    fileSystem.updateFile(lists[index]);
     res.status(200).end();
 })
 
