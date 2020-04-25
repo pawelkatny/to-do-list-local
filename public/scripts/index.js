@@ -66,7 +66,8 @@ $('.btn-new-list').click((event) => {
 
 
 //Delete list
-$(".btn-delete").click((event) => {
+
+$('.main-container').on('click', '.btn-delete', (event) => {
     var list = $(event.target).parent().parent().parent();
     var listID = list.prop('id');
     $.ajax({
@@ -84,6 +85,26 @@ $(".btn-delete").click((event) => {
             window.location.href = '/';
         });
 })
+
+// WORKING 
+// $(".btn-delete").click((event) => {
+//     var list = $(event.target).parent().parent().parent();
+//     var listID = list.prop('id');
+//     $.ajax({
+//         method: 'DELETE',
+//         url: '/delete',
+//         data: {
+//             listID: listID
+//         },
+//     })
+//         .done(() => {
+//             $(list).remove();
+//         })
+//         .fail(() => {
+//             alert('Ups! Something went wrong.Reloading page...');
+//             window.location.href = '/';
+//         });
+// })
 
 //Change list title
 $('.main-container').on('click', 'h4', (event) => {
