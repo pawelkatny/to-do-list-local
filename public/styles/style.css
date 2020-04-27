@@ -135,6 +135,7 @@ h4 {
 
 .list-item {
     padding: 15px 5px 15px 5px;
+
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ccc;
@@ -143,6 +144,8 @@ h4 {
 
 .item-text {
     margin: 0;
+    max-width: 200px;
+    word-wrap: break-word;
 }
 
 .list-item input {
