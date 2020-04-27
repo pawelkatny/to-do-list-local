@@ -144,3 +144,11 @@ $('.main-container').on('click', 'h4', (event) => {
 
 })
 
+$('.main-container').on('click', ':checkbox', (event) => {
+    var checkbox = $(event.target);
+    if (checkbox.checked) {
+        checkbox.siblings().toggleClass('item-done');
+    } else {
+        checkbox.siblings().toggleClass('item-done');
+    }
+})

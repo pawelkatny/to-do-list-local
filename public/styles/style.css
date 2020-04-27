@@ -148,6 +148,11 @@ h4 {
     word-wrap: break-word;
 }
 
+.item-done {
+    text-decoration: line-through;
+    color: #CCC;
+}
+
 .list-item input {
     margin-right: 5%;
     height: 20px;
