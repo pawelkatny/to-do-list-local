@@ -52,10 +52,22 @@ app.delete('/delete', (req, res) => {
 })
 
 app.put('/update', (req, res) => {
-    console.log(req.body.title)
-    const index = lists.findIndex(ele => ele.ID ===Number(req.body.ID))
 
-    lists[index].title = req.body.title;
+    const index = lists.findIndex(ele => ele.ID === Number(req.body.listID))
+
+    console.log(req.body);
+
+    switch (req.body.change) {
+        case 'list-title':
+            lists[index].title = req.body.title;
+            break;
+        case 'item-done':
+            lists[index].items[req.body.itemID].done = req.body.done;
+            break;
+        default:
+            console.log('Unexpected error.');
+    }
+
     fileSystem.updateFile(lists[index]);
     res.status(200).end();
 })

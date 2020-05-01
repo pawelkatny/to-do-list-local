@@ -125,30 +125,60 @@ $('.main-container').on('click', 'h4', (event) => {
             class: 'title',
             text: newInput.val()
         })
-        $.ajax({
-            method: 'PUT',
-            url: '/update',
-            data: {
-                ID: listID,
-                title: newInput.val()
-            }
-        })
-            .done(() => {
-                $(newInput).replaceWith(div);
+        if (newInput.val() !== title.text()) {
+            $.ajax({
+                method: 'PUT',
+                url: '/update',
+                data: {
+                    listID: listID,
+                    change: 'title',
+                    title: newInput.val()
+                }
             })
-            .fail(() => {
-                alert('Ups! Something went wrong.Reloading page...');
-                window.location.href = '/';
-            });
+                .done(() => {
+                    $(newInput).replaceWith(div);
+                })
+                .fail(() => {
+                    alert('Ups! Something went wrong.Reloading page...');
+                    window.location.href = '/';
+                });
+        }
     })
 
 })
 
+// List item checked/unchecked
 $('.main-container').on('click', ':checkbox', (event) => {
     var checkbox = $(event.target);
-    if (checkbox.checked) {
+    var itemID = checkbox.parent().prop('id');
+    var listID = checkbox.parent().parent().parent().prop('id');
+    var data = {
+        listID: listID,
+        itemID: itemID,
+        change: 'item-done',
+        done: Boolean
+    }
+
+    if (checkbox.is(':checked')) {
         checkbox.siblings().toggleClass('item-done');
+        data.done = true;
     } else {
         checkbox.siblings().toggleClass('item-done');
+        data.done = false;
     }
+
+    $.ajax({
+        method: 'PUT',
+        url: '/update',
+        data: data
+    })
+        .done(() => {
+            console.log('Input change ok');
+        })
+        .fail(() => {
+            alert('Ups! Something went wrong.Reloading page...');
+            window.location.href = '/';
+        });
+
+    console.log(data);
 })
